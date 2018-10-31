@@ -1,0 +1,11 @@
+*
+!/.gitignore.d
+!/.gitignore.d/desktop-openbox
+!/.config
+!/.config/openbox
+!/.config/openbox/autostart
+!/.config/openbox/menu.xml
+!/.config/openbox/rc.xml
+!/.utility
+!/.utility/bar
+!/.utility/lock
