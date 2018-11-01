@@ -3,12 +3,12 @@ xset +fp ~/.fonts
 xset fp rehash
 
 # Setup lemonbar
-bar &
+~/.utility/bar &
 
 # Backgrounds
 feh --bg-max --randomize ~/Pictures/Wallpapers/* &
 
 # Lockscreen
-xautolock -time 15 -locker lock & 
+xautolock -time 15 -locker ~/.utility/lock & 
 
 
