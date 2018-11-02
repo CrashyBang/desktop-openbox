@@ -340,6 +340,12 @@
         <command>scrot</command>
       </action>
     </keybind>
+    <!-- CUSTOM BINDINGS -->
+    <keybind key="A-q">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
     <!-- Keybindigs for Display Brightness -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
