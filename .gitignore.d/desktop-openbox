@@ -9,3 +9,6 @@
 !/.utility
 !/.utility/bar
 !/.utility/lock
+!/.utility/assets
+!/.utility/assets/*.png
+!/.utility/assets/*.jpg

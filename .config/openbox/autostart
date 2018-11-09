@@ -9,7 +9,7 @@ xset fp rehash
 feh --bg-max --randomize ~/Pictures/Wallpapers/* &
 
 # Lockscreen
-xautolock -time 15 -locker "~/.utility/lock" & 
+"~/.utility/screen" & 
 
 # Lockscreen on lid close
 xss-lock -- "$HOME/.utility/lock" &
