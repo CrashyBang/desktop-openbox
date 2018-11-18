@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Disable defaults
+# https://wiki.archlinux.org/index.php/Display_Power_Management_Signaling
+# https://www.linuxquestions.org/questions/arch-29/screen-goes-blank-after-ten-minutes-in-lxde-how-to-change-this-769000/
+xset s off -dpms
+
+# Run xidlehook
+# $HOME/.cargo/bin/xidlehook \
+$HOME/Developer/xidlehook/target/release/xidlehook \
+    --not-when-fullscreen --not-when-audio \
+    --timer primary 300 '~/.utility/lock' '' \
+    --timer normal 600 'systemctl suspend' ''

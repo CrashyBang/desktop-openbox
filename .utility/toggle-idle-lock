@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# https://askubuntu.com/questions/157779/how-to-determine-whether-a-process-is-running-or-not-and-make-use-it-to-make-a-c
+if pgrep -x "xidlehook" > /dev/null 
+then
+    pgrep -x "xidlehook" | xargs kill -9
+    STATUS="Disabled"
+else
+    $HOME/.utility/screen > /tmp/autostart-logs/screen.log 2>&1 &
+    STATUS="Enabled"
+fi
+
+ID=$(cat /tmp/notify-send-id)
+
+if [ -n "$ID" ]
+then
+    ID=$(notify-send.sh --replace="$ID" --print-id "Idle screen lock" "$STATUS") 
+else
+    ID=$(notify-send.sh --print-id "Idle screen lock" "$STATUS")
+    # https://stackoverflow.com/questions/9904980/variable-in-bash-script-that-keeps-it-value-from-the-last-time-running<Paste>
+    echo "${ID}" > /tmp/notify-send-id
+fi
+

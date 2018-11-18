@@ -7,8 +7,7 @@
 !/.config/openbox/menu.xml
 !/.config/openbox/rc.xml
 !/.utility
-!/.utility/bar
-!/.utility/lock
+!/.utility/*
 !/.utility/assets
 !/.utility/assets/*.png
 !/.utility/assets/*.jpg

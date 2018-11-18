@@ -1,15 +1,22 @@
+# Make logs directory for outputs
+# https://serverfault.com/questions/180503/how-do-i-get-nohup-out-flushed-more-often
+mkdir /tmp/autostart-logs
+
 # Fonts
 xset +fp ~/.fonts
 xset fp rehash
 
-# Setup lemonbar
-~/.utility/bar &
-
 # Backgrounds
-feh --bg-max --randomize ~/Pictures/Wallpapers/* &
+feh --bg-max --randomize ~/SpiderOak\ Hive/Images/Wallpapers/* &
 
-# Lockscreen
-"~/.utility/screen" & 
-
-# Lockscreen on lid close
+# Locks on suspend
 xss-lock -- "$HOME/.utility/lock" &
+
+# Locks on idle
+$HOME/.utility/screen > /tmp/autostart-logs/screen.log 2>&1 & 
+
+# Polybar
+polybar status > /tmp/autostart-logs/polybar.log 2>&1 &
+
+# Music server
+mopidy > /tmp/autostart-logs/mopidy.log 2>&1 &
