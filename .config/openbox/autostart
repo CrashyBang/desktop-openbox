@@ -9,11 +9,14 @@ xset fp rehash
 # Backgrounds
 feh --bg-max --randomize ~/SpiderOak\ Hive/Images/Wallpapers/* &
 
-# Locks on suspend
-xss-lock -- "$HOME/.utility/lock" &
+# Battery alerts
+$HOME/.utility/battery-level-alert > /tmp/autostart-logs/battery.log 2>&1 &
 
 # Locks on idle
-$HOME/.utility/screen > /tmp/autostart-logs/screen.log 2>&1 & 
+$HOME/.utility/screen > /tmp/autostart-logs/screen.log 2>&1 &  
+
+# Locks on suspend
+xss-lock -- "$HOME/.utility/lock" &
 
 # Polybar
 polybar status > /tmp/autostart-logs/polybar.log 2>&1 &

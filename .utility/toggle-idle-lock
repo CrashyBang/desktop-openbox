@@ -17,7 +17,7 @@ then
     ID=$(notify-send.sh --replace="$ID" --print-id "Idle screen lock" "$STATUS") 
 else
     ID=$(notify-send.sh --print-id "Idle screen lock" "$STATUS")
-    # https://stackoverflow.com/questions/9904980/variable-in-bash-script-that-keeps-it-value-from-the-last-time-running<Paste>
+    # https://stackoverflow.com/questions/9904980/variable-in-bash-script-that-keeps-it-value-from-the-last-time-running
     echo "${ID}" > /tmp/notify-send-id
 fi
 
