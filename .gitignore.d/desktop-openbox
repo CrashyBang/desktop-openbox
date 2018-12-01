@@ -4,8 +4,10 @@
 !/.config
 !/.config/openbox
 !/.config/openbox/autostart
-!/.config/openbox/menu.xml
 !/.config/openbox/rc.xml
+!/.config/obmenu-generator
+!/.config/obmenu-generator/config.pl
+!/.config/obmenu-generator/schema.pl
 !/.utility
 !/.utility/*
 !/.utility/assets

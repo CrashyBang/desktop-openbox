@@ -6,7 +6,7 @@ do
     battery_level=$(cat /sys/class/power_supply/BAT1/capacity)
     if ! on_ac_power; then
         if [ $battery_level -le 20 ]; then
-            notify-send.sh "Battery is low" "Please plug in AC adapter. Current battery level ${battery_level}"
+            notify-send "Battery is low" "Please plug in AC adapter. Current battery level ${battery_level}%"
         fi
     fi
 
