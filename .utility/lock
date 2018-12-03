@@ -11,17 +11,17 @@ fi
 scrot /tmp/screen.png
 
 # Pixelate screen shot
-convert /tmp/screen.png -scale 20% -scale 500% /tmp/screen-pixelate.png
+convert /tmp/screen.png -scale 20% -scale 500% /tmp/screen-lock.png
 
 # Grab and resize lock image (this could be a random image)
 convert ~/.utility/assets/lock-icon.png -resize 300 /tmp/lock-icon.png 
 
 # Will need to check the resized image does not exceed 1080 pixels in height if it is radomized
-convert /tmp/screen-pixelate.png /tmp/lock-icon.png -gravity center -composite /tmp/screen-lock.png
+convert /tmp/screen-lock.png /tmp/lock-icon.png -gravity center -composite /tmp/screen-lock.png
+
+# clean up scrot image
+rm /tmp/screen.png
 
 # Lock the screen
-i3lock -u -e -i /tmp/screen-lock.png -n
-
-rm /tmp/screen.png
-rm /tmp/screen-pixelate.png
-rm /tmp/screen-lock.png
+i3lock -u -e -i /tmp/screen-lock.png -n &
+disown
